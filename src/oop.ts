@@ -7,6 +7,14 @@ class Employee {
   get baseSalary(): number {
     return this._baseSalary;
   }
+
+  describe() {
+    return `${this.name} earns ${this.baseSalary}`;
+  }
+
+  calculatePay() {
+    return this.baseSalary;
+  }
 }
 
 class Manager extends Employee {
@@ -16,13 +24,15 @@ class Manager extends Employee {
     super(name, _baseSalary);
     this.teamMemberCount = teamMemberCount;
   }
+
+  describeWork() {
+    return `${this.name} manages ${this.teamMemberCount} people`;
+  }
 }
 
 const employee1 = new Employee("Sean", 20000);
 
-// employee1.salary = 23000;
-
-console.log(employee1.baseSalary);
+// console.log(employee1.calculatePay());
 
 const manager = new Manager("Mark", 30000, 12);
-console.log(manager);
+// console.log(manager.describe());
